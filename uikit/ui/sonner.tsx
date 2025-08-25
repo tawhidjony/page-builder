@@ -1,9 +1,9 @@
 "use client"
 
 import { useTheme } from "next-themes"
-import { Toaster as Sonner, ToasterProps } from "sonner"
+import { Toaster as Sonner, toast, ToasterProps } from "sonner"
 
-const Toaster = ({ ...props }: ToasterProps) => {
+export const Toaster = ({ ...props }: ToasterProps) => {
   const { theme = "system" } = useTheme()
 
   return (
@@ -22,4 +22,35 @@ const Toaster = ({ ...props }: ToasterProps) => {
   )
 }
 
-export { Toaster }
+
+type ToastType = {
+  message: string
+}
+
+const Success = ({ message }: ToastType) => {
+  return toast.success(message)
+}
+
+const Error = ({ message }: ToastType) => {
+  return toast.error(message)
+}
+
+const Warning = ({ message }: ToastType) => {
+  return toast.warning(message)
+}
+
+const Info = ({ message }: ToastType) => {
+  return toast.info(message)
+}
+
+const Loading = ({ message }: ToastType) => {
+  return toast.loading(message)
+}
+
+export const Toast = {
+  Success,
+  Error,
+  Warning,
+  Info,
+  Loading,
+}
