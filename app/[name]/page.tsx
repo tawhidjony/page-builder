@@ -11,7 +11,7 @@ export default function PageDetails() {
     const { name } = useParams<{ name: string }>()
     const { data, isLoading, isFetching, isSuccess, isError, error } = useQuery({
         queryKey: ['builder-get-single-data', name],
-        queryFn: () => fetch('http://localhost:5000/templete/' + name).then(res => res.json()),
+        queryFn: () => fetch('http://localhost:5010/templete/' + name).then(res => res.json()),
     })
 
     if (isLoading || isFetching) {
