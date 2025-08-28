@@ -1,9 +1,8 @@
+import { CSSProperties } from "react"
+
 export interface IChildren {
     id: string
     type: string
-    props: Props
+    props: CSSProperties
 }
 
-export interface Props {
-    [key: string]: string | number | boolean
-}

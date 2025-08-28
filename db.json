@@ -10,18 +10,19 @@
         {
           "id": "div-1",
           "type": "div",
+          "style": {},
           "children": [
             {
               "id": "heading-1",
               "type": "heading",
-              "props": {
+              "style": {
                 "text": "Hello"
               }
             },
             {
               "id": "btn-1",
               "type": "button",
-              "props": {
+              "style": {
                 "label": "Click"
               }
             }
