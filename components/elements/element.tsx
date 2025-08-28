@@ -25,6 +25,8 @@ export type ElementProps = ElementLayoutProps & {
     id: string | number
     type: IElementsType
     style: CSSProperties
+    extraAttributes?: any
+    parentId?: string
 }
 
 

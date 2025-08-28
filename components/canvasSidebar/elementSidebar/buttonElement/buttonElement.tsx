@@ -8,7 +8,6 @@ type Props = {
 }
 
 export const ButtonElement = ({ formElement }: Props) => {
-    console.log(formElement.construct(formElement.type))
 
     const { label, icon: Icon } = formElement.buttonElement
     const draggable = useDraggable({

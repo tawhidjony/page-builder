@@ -5,7 +5,7 @@ import { idGenerator } from "../function/idGenerator";
 import { useStore } from "../store";
 
 export default function CanvasView() {
-    const { elements, setElements } = useStore()
+    const { elements, addElementToCanvas } = useStore()
     const droppable = useDroppable({
         id: "canvas-drop-area",
         data: {
@@ -21,13 +21,18 @@ export default function CanvasView() {
             const isDesignerBtnElement = active?.data?.current?.isDesignerBtnElement
             const isDesignerBtnElementType = active?.data?.current?.type
             const isCanvasDropArea = over?.data?.current?.isCanvasDropArea
+            const isDivLayoutArea = over?.data?.current?.isDivLayoutArea
+
+            // Don't handle drops on div areas - let the div handle them
+            if (isDivLayoutArea) return;
+
             const droppingSidebarBtnOverDesignerDropArea = (isDesignerBtnElement && isCanvasDropArea) && isDesignerBtnElementType === "Div"
 
             // first senario
             if (droppingSidebarBtnOverDesignerDropArea) {
                 const type = active.data?.current?.type
                 const newElement = Elements[type as IElementsType].construct(idGenerator())
-                setElements(newElement)
+                addElementToCanvas(newElement)
                 return;
             }
 
