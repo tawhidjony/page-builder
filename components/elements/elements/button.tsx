@@ -89,7 +89,7 @@ function DesignerComponent({ elementProps }: { elementProps: ElementProps }) {
                 {elementProps.extraAttributes?.label || "Button"}
             </button>
             {isHover && (
-                <div className="absolute -top-8 right-0 bg-primary px-2 py-1 text-white text-xs rounded">
+                <div className="absolute -top-0 right-0  px-2 py-1 bg-red-600  text-xs rounded">
                     Click to edit
                 </div>
             )}
